@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "1.1",
+  "logicModel": {
+    "incompatibilitiesAreSymmetric": true,
+    "groupCardinalityEnforced": true
+  },
+
+  "entities": [
+    { "id": "SCHED_TRIGGERED", "label": "Scheduling: Triggered", "group": "Scheduling" },
+    { "id": "SCHED_FIXED", "label": "Scheduling: Fixed Start/End", "group": "Scheduling" },
+
+    { "id": "TRX_SINGLE", "label": "Transactions: Single Transaction", "group": "Transactions" },
+    { "id": "TRX_MULTIPLE", "label": "Transactions: Multiple Transaction", "group": "Transactions" },
+
+    { "id": "REQ_BEH_SINGLE", "label": "Required Behaviour: Single Behaviour", "group": "Required Behaviour" },
+    { "id": "REQ_BEH_MULTI", "label": "Required Behaviour: Multi-behaviour", "group": "Required Behaviour" },
+
+    { "id": "BEH_PURCHASE_DOLLAR", "label": "Behaviour Type: Purchase $ amount", "group": "Behaviour Type" },
+    { "id": "BEH_PURCHASE_QTY", "label": "Behaviour Type: Purchase X quantity", "group": "Behaviour Type" },
+    { "id": "BEH_REDEEM_POINTS", "label": "Behaviour Type: Redeem Points", "group": "Behaviour Type" },
+    { "id": "BEH_PERFORM_ACTIVITY", "label": "Behaviour Type: Perform Activity", "group": "Behaviour Type" },
+
+    { "id": "REWARD_POINTS", "label": "Reward: Points", "group": "Reward" },
+    { "id": "REWARD_DISCOUNT", "label": "Reward: $ or % Off Discount", "group": "Reward" },
+    { "id": "REWARD_GAMEPLAY", "label": "Reward: Gameplay", "group": "Reward" },
+
+    { "id": "ACT_AUTO_LOAD", "label": "Activation: Auto Load", "group": "Activation" },
+    { "id": "ACT_LOAD_TO_CARD", "label": "Activation: Load to Card", "group": "Activation" },
+    { "id": "ACT_COUPON_CODE", "label": "Activation: Coupon Code", "group": "Activation" }
+  ],
+
+  "groups": [
+    {
+      "id": "Scheduling",
+      "label": "Scheduling",
+      "maxSelected": 1,
+      "members": ["SCHED_TRIGGERED", "SCHED_FIXED"]
+    },
+    {
+      "id": "Transactions",
+      "label": "Required Transactions",
+      "maxSelected": 1,
+      "members": ["TRX_SINGLE", "TRX_MULTIPLE"]
+    },
+    {
+      "id": "Required Behaviour",
+      "label": "Required Behaviour",
+      "maxSelected": 1,
+      "members": ["REQ_BEH_SINGLE", "REQ_BEH_MULTI"]
+    },
+    {
+      "id": "Behaviour Type",
+      "label": "Behaviour Type",
+      "maxSelected": 1,
+      "members": ["BEH_PURCHASE_DOLLAR", "BEH_PURCHASE_QTY", "BEH_REDEEM_POINTS", "BEH_PERFORM_ACTIVITY"]
+    },
+    {
+      "id": "Reward",
+      "label": "Reward",
+      "maxSelected": 1,
+      "members": ["REWARD_POINTS", "REWARD_DISCOUNT", "REWARD_GAMEPLAY"]
+    },
+    {
+      "id": "Activation",
+      "label": "Activation",
+      "maxSelected": 1,
+      "members": ["ACT_AUTO_LOAD", "ACT_LOAD_TO_CARD", "ACT_COUPON_CODE"]
+    }
+  ],
+
+  "incompatibilityPairs": [
+    ["SCHED_TRIGGERED", "ACT_COUPON_CODE"],
+
+    ["TRX_MULTIPLE", "REQ_BEH_MULTI"],
+    ["TRX_MULTIPLE", "BEH_REDEEM_POINTS"],
+    ["TRX_MULTIPLE", "BEH_PERFORM_ACTIVITY"],
+    ["TRX_MULTIPLE", "REWARD_DISCOUNT"],
+    ["TRX_MULTIPLE", "REWARD_GAMEPLAY"],
+    ["TRX_MULTIPLE", "ACT_COUPON_CODE"],
+
+    ["REQ_BEH_MULTI", "BEH_REDEEM_POINTS"],
+    ["REQ_BEH_MULTI", "BEH_PERFORM_ACTIVITY"],
+    ["REQ_BEH_MULTI", "REWARD_DISCOUNT"],
+    ["REQ_BEH_MULTI", "REWARD_GAMEPLAY"],
+
+    ["BEH_PURCHASE_DOLLAR", "BEH_REDEEM_POINTS"],
+    ["BEH_PURCHASE_DOLLAR", "BEH_PERFORM_ACTIVITY"],
+    ["BEH_PURCHASE_QTY", "BEH_REDEEM_POINTS"],
+    ["BEH_PURCHASE_QTY", "BEH_PERFORM_ACTIVITY"],
+    ["BEH_REDEEM_POINTS", "REWARD_DISCOUNT"],
+    ["BEH_PERFORM_ACTIVITY", "REWARD_DISCOUNT"],
+    ["BEH_PERFORM_ACTIVITY", "REWARD_GAMEPLAY"]
+  ],
+
+  "requirements": []
+}
