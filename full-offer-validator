@@ -1,0 +1,213 @@
+{
+  "businessRules": {
+    "offerTypes": {
+      "ACTIVITY_TRIGGERED_SCHEDULING": {
+        "scheduling": {
+          "schedulingType": {
+            "triggered": "REQUIRED",
+            "fixed": "NOT_ALLOWED"
+          },
+          "trigger": "MANDATORY",
+          "offerDuration": "MANDATORY",
+          "triggerLimit": "MANDATORY",
+          "startDate": "MANDATORY",
+          "endDate": "MANDATORY",
+          "doesNotExpire": "OPTIONAL",
+          "displayDate": "NOT_ALLOWED"
+        },
+        "requiredBehaviour": {
+          "transactionTypeMultiple": "NOT_ALLOWED",
+          "multiBehaviour": "NOT_ALLOWED",
+          "behaviourTypeRedeem": "NOT_ALLOWED",
+          "behaviourTypePerformActivity": "NOT_ALLOWED",
+          "partnerPaymentCardRequired": "NOT_ALLOWED"
+        },
+        "rewards": {
+          "baseMultiplier": "NOT_ALLOWED",
+          "tierProgramMultiplier": "NOT_ALLOWED",
+          "multiTierRewards": "NOT_ALLOWED",
+          "employeeDiscount": "MANDATORY_YES_OPTIONAL_TO_APPLY",
+          "currencyNonPoints": "NOT_ALLOWED",
+          "gameplay": "NOT_ALLOWED"
+        },
+        "audienceTargeting": {
+          "dynamic": "NOT_ALLOWED",
+          "offerControl": "NOT_ALLOWED",
+          "delayedTargeting": "NOT_ALLOWED"
+        },
+        "activation": {
+          "couponCode": "NOT_ALLOWED"
+        },
+        "usageControls": {
+          "memberRedemptionLimit": "SPECIAL_FORMATTING",
+          "offerWideRedemptionLimit": "SPECIAL_FORMATTING",
+          "memberMaxRewardLifetime": "SPECIAL_FORMATTING",
+          "memberMaxRewardPerTransaction": "SPECIAL_FORMATTING",
+          "stackingAllowed": "NOT_ALLOWED"
+        },
+        "metaData": {
+          "nearMissPrompt": "NOT_ALLOWED",
+          "anonymousShoppingPrompt": "NOT_ALLOWED"
+        }
+      },
+      "FIX_SCHEDULING": {
+        "scheduling": {
+          "schedulingType": {
+            "triggered": "NOT_ALLOWED",
+            "fixed": "REQUIRED"
+          },
+          "trigger": "NOT_ALLOWED",
+          "offerDuration": "NOT_ALLOWED",
+          "triggerLimit": "NOT_ALLOWED",
+          "startDate": "MANDATORY",
+          "endDate": "MANDATORY",
+          "doesNotExpire": "OPTIONAL",
+          "displayDate": "OPTIONAL"
+        }
+      },
+      "FREQUENCY_OFFERS": {
+        "requiredBehaviour": {
+          "transactionTypeMultiple": "REQUIRED",
+          "multiBehaviour": "NOT_ALLOWED",
+          "behaviourTypeRedeem": "NOT_ALLOWED",
+          "behaviourTypePerformActivity": "NOT_ALLOWED",
+          "globalExclusionTag": "NOT_ALLOWED",
+          "partnerPaymentCardRequired": "NOT_ALLOWED"
+        },
+        "rewards": {
+          "flatBonusPer": "NOT_ALLOWED",
+          "baseMultiplier": "NOT_ALLOWED",
+          "tierProgramMultiplier": "NOT_ALLOWED",
+          "multiTierRewards": "NOT_ALLOWED",
+          "currencyNonPoints": "NOT_ALLOWED",
+          "gameplay": "NOT_ALLOWED"
+        },
+        "audienceTargeting": {
+          "dynamic": "NOT_ALLOWED",
+          "offerControl": "NOT_ALLOWED"
+        },
+        "metaData": {
+          "nearMissPrompt": "NOT_ALLOWED",
+          "anonymousShoppingPrompt": "NOT_ALLOWED"
+        }
+      },
+      "MULTI_BEHAVIOUR_OFFERS": {
+        "requiredBehaviour": {
+          "transactionTypeMultiple": "NOT_ALLOWED",
+          "multiBehaviour": "REQUIRED",
+          "behaviourTypeRedeem": "NOT_ALLOWED",
+          "behaviourTypePerformActivity": "NOT_ALLOWED"
+        },
+        "rewards": {
+          "multiTierRewards": "NOT_ALLOWED",
+          "currencyNonPoints": "NOT_ALLOWED",
+          "gameplay": "NOT_ALLOWED"
+        },
+        "audienceTargeting": {
+          "dynamic": "NOT_ALLOWED"
+        },
+        "activation": {
+          "couponCode": "NOT_ALLOWED"
+        },
+        "metaData": {
+          "anonymousShoppingPrompt": "NOT_ALLOWED"
+        }
+      },
+      "REDEMPTION_OFFERS": {
+        "requiredBehaviour": {
+          "transactionTypeMultiple": "NOT_ALLOWED",
+          "multiBehaviour": "NOT_ALLOWED",
+          "behaviourTypeRedeem": "REQUIRED",
+          "behaviourTypePerformActivity": "NOT_ALLOWED",
+          "partnerPaymentCardRequired": "NOT_ALLOWED"
+        },
+        "rewards": {
+          "baseMultiplier": "NOT_ALLOWED",
+          "tierProgramMultiplier": "NOT_ALLOWED",
+          "multiTierRewards": "NOT_ALLOWED",
+          "employeeDiscount": "NOT_ALLOWED",
+          "currencyNonPoints": "NOT_ALLOWED",
+          "gameplay": "NOT_ALLOWED"
+        },
+        "audienceTargeting": {
+          "offerControl": "NOT_ALLOWED"
+        },
+        "metaData": {
+          "nearMissPrompt": "NOT_ALLOWED",
+          "anonymousShoppingPrompt": "NOT_ALLOWED",
+          "vendorSponsoredFlag": "NOT_ALLOWED"
+        }
+      },
+      "ACTIVITY_OFFERS": {
+        "requiredBehaviour": {
+          "transactionTypeMultiple": "NOT_ALLOWED",
+          "multiBehaviour": "NOT_ALLOWED",
+          "behaviourTypeRedeem": "NOT_ALLOWED",
+          "behaviourTypePerformActivity": "REQUIRED",
+          "behaviourTypePurchaseQuantity": "NOT_ALLOWED",
+          "partnerPaymentCardRequired": "NOT_ALLOWED"
+        },
+        "rewards": {
+          "baseMultiplier": "NOT_ALLOWED",
+          "tierProgramMultiplier": "NOT_ALLOWED",
+          "multiTierRewards": "NOT_ALLOWED",
+          "currencyNonPoints": "NOT_ALLOWED",
+          "gameplay": "NOT_ALLOWED"
+        },
+        "metaData": {
+          "anonymousShoppingPrompt": "NOT_ALLOWED"
+        }
+      },
+      "AUDIENCE_EVERYONE": {
+        "audienceTargeting": {
+          "audienceEveryone": "REQUIRED"
+        }
+      },
+      "AUDIENCE_SPECIFIC": {
+        "audienceTargeting": {
+          "audienceSpecific": "REQUIRED",
+          "audienceSpecificLogicProfileOnly": "REQUIRED",
+          "audienceSpecificLogicPurchaseOnly": "REQUIRED",
+          "audienceSpecificLogicProfileAndPurchase": "REQUIRED",
+          "specificAudience": "REQUIRED"
+        }
+      },
+      "AUDIENCE_USES_PURCHASE_HISTORY": {
+        "audienceTargeting": {
+          "audienceSpecificLogicPurchaseOnly": "REQUIRED",
+          "audienceSpecificLogicProfileAndPurchase": "REQUIRED"
+        }
+      },
+      "AUDIENCE_LIST": {
+        "audienceTargeting": {
+          "audienceSpecific": "REQUIRED",
+          "specificAudience": "REQUIRED"
+        }
+      },
+      "AUDIENCE_SAVED": {
+        "audienceTargeting": {
+          "audienceSpecific": "REQUIRED"
+        }
+      },
+      "DYNAMIC_AUDIENCE_TARGETING": {
+        "audienceTargeting": {
+          "dynamic": "REQUIRED",
+          "offerControl": "NOT_ALLOWED",
+          "delayedTargeting": "NOT_ALLOWED"
+        }
+      },
+      "NEAR_MISS_PROMPT": {
+        "metaData": {
+          "nearMissPrompt": "REQUIRED"
+        }
+      }
+    },
+    "commonMandatoryFields": {
+      "internalIdentifiers": {
+        "businessUnit": "MANDATORY",
+        "offerName": "MANDATORY",
+        "offerId": "MANDATORY"
+      }
+    }
+  }
+}
