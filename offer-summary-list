@@ -1,0 +1,129 @@
+{
+  "schemaVersion": "0.1",
+  "purpose": "Offer configuration field inventory (flat per section)",
+  "sections": [
+    {
+      "id": "internal_identifiers",
+      "label": "Internal Identifiers",
+      "fields": [
+        "internalIdentifiers",
+        "businessUnit",
+        "offerName",
+        "offerId"
+      ]
+    },
+    {
+      "id": "scheduling",
+      "label": "Scheduling",
+      "fields": [
+        "schedulingTypeTriggered",
+        "schedulingTypeFixedStartEnd",
+        "trigger",
+        "offerDuration",
+        "triggerLimit",
+        "startDate",
+        "endDate",
+        "doesNotExpire",
+        "displayDate"
+      ]
+    },
+    {
+      "id": "copy_and_creative",
+      "label": "Copy and Creative",
+      "fields": [
+        "promotionHeadline",
+        "shortDescription1",
+        "shortDescription2",
+        "longDescription",
+        "termsAndConditions",
+        "smallImageUrl",
+        "additionalCreativeAssets"
+      ]
+    },
+    {
+      "id": "required_behaviour",
+      "label": "Required Behaviour",
+      "fields": [
+        "transactionTypeSingle",
+        "transactionTypeMultipleFrequency",
+        "requiredBehaviourSingle",
+        "requiredBehaviourMulti",
+        "behaviourPurchaseAmount",
+        "behaviourPurchaseQuantity",
+        "behaviourRedeem",
+        "behaviourPerformActivity",
+        "globalExclusionTag",
+        "partnerPaymentCardRequired"
+      ]
+    },
+    {
+      "id": "details_rewards",
+      "label": "Details - Rewards",
+      "fields": [
+        "currencyPoints",
+        "flatBonusMin",
+        "flatBonusPer",
+        "baseMultiplier",
+        "tierProgramMultiplier",
+        "multiTierRewards",
+        "employeeDiscount",
+        "currencyNonPointsReward",
+        "gameplay"
+      ]
+    },
+    {
+      "id": "details_audience_targeting",
+      "label": "Details - Audience Targeting",
+      "fields": [
+        "audienceEveryone",
+        "audienceSpecific",
+        "logicProfileOnly",
+        "logicPurchaseOnly",
+        "logicProfileAndPurchase",
+        "specificAudience",
+        "staticAudience",
+        "dynamicAudience",
+        "offerControl",
+        "delayedTargeting"
+      ]
+    },
+    {
+      "id": "details_location_targeting",
+      "label": "Details - Location Targeting",
+      "fields": [
+        "locationAll",
+        "locationSpecificLogic"
+      ]
+    },
+    {
+      "id": "activation",
+      "label": "Activation",
+      "fields": [
+        "autoLoad",
+        "loadToCard",
+        "couponCode"
+      ]
+    },
+    {
+      "id": "usage_controls",
+      "label": "Usage Controls",
+      "fields": [
+        "memberRedemptionLimit",
+        "offerWideRedemptionLimit",
+        "memberMaxRewardLifetime",
+        "memberMaxRewardPerTransaction",
+        "stackingAllowed"
+      ]
+    },
+    {
+      "id": "meta_data",
+      "label": "Meta Data",
+      "fields": [
+        "nearMissPrompt",
+        "anonymousShoppingPrompt",
+        "vendorSponsoredFlag",
+        "sortValue"
+      ]
+    }
+  ]
+}
